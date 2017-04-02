@@ -5,7 +5,7 @@ namespace YevgenGrytsay\ProcessControl\Shared;
  * @author: yevgen
  * @date: 02.04.17
  */
-interface ISharedValue {
+interface Value {
     /**
      * @return mixed
      * @throws \Exception

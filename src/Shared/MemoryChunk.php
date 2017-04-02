@@ -5,7 +5,7 @@ namespace YevgenGrytsay\ProcessControl\Shared;
  * @author: yevgen
  * @date: 02.04.17
  */
-class SharedMemoryChunk implements ISharedValue
+class MemoryChunk implements Value
 {
     private $offset;
     private $size;

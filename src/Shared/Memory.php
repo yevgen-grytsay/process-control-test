@@ -5,7 +5,7 @@ namespace YevgenGrytsay\ProcessControl\Shared;
  * @author: yevgen
  * @date: 02.04.17
  */
-class SharedMemory
+class Memory
 {
     private $size;
     private $chunks = [];
@@ -33,7 +33,7 @@ class SharedMemory
         if ($this->getFreeSize() < $size) {
             throw new \Exception("Couldn't create memory chunk. Not enough memory.");
         }
-        $chunk = new SharedMemoryChunk($this->id, $size, $this->offset);
+        $chunk = new MemoryChunk($this->id, $size, $this->offset);
         $chunks[] = $chunk;
         $this->offset += $size;
         return $chunk;

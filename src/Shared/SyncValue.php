@@ -5,23 +5,23 @@ namespace YevgenGrytsay\ProcessControl\Shared;
  * @author: yevgen
  * @date: 02.04.17
  */
-class SyncSharedValue implements ISharedValue
+class SyncValue implements Value
 {
     /**
      * @var resource
      */
     private $semId;
     /**
-     * @var ISharedValue
+     * @var Value
      */
     private $val;
 
     /**
      * SyncSharedValue constructor.
      * @param $semId
-     * @param ISharedValue $val
+     * @param Value $val
      */
-    public function __construct($semId, ISharedValue $val)
+    public function __construct($semId, Value $val)
     {
         $this->semId = $semId;
         $this->val = $val;

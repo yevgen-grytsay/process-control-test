@@ -5,14 +5,14 @@ namespace YevgenGrytsay\ProcessControl\Shared;
  * @author: yevgen
  * @date: 02.04.17
  */
-class SharedInt implements ISharedValue
+class IntValue implements Value
 {
     /**
      * @var int
      */
     private static $size;
     /**
-     * @var ISharedValue
+     * @var Value
      */
     private $value;
 
@@ -24,9 +24,9 @@ class SharedInt implements ISharedValue
 
     /**
      * SharedInt constructor.
-     * @param ISharedValue $value
+     * @param Value $value
      */
-    public function __construct(ISharedValue $value)
+    public function __construct(Value $value)
     {
         $this->value = $value;
         static::$size = self::getSize();

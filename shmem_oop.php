@@ -3,21 +3,21 @@
  * @author: yevgen
  * @date: 02.04.17
  */
-use YevgenGrytsay\ProcessControl\SharedInt;
-use YevgenGrytsay\ProcessControl\Shared\SharedMemory;
+use YevgenGrytsay\ProcessControl\Shared\IntValue;
+use YevgenGrytsay\ProcessControl\Shared\Memory;
 
 require_once __DIR__.'/vendor/autoload.php';
 
 /**
  * @param $initialValue
- * @return SharedInt
+ * @return IntValue
  */
 function createInt($initialValue)
 {
-    $mem = new SharedMemory(100);
-    $intChunk = $mem->createChunk(SharedInt::getSize());
+    $mem = new Memory(100);
+    $intChunk = $mem->createChunk(IntValue::getSize());
 //    $syncInt = new SyncSharedValue(sem_get(ftok('.', '.')), $intChunk);
-    $int = new SharedInt($intChunk);
+    $int = new IntValue($intChunk);
     $int->set($initialValue);
     return $int;
 }
